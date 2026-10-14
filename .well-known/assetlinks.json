@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "org.mandata.phone",
+    "sha256_cert_fingerprints": ["58:87:30:61:F9:8B:25:68:54:B0:75:F2:27:44:8A:4F:60:4E:C1:B9:E3:A6:D2:1A:19:C9:32:5C:D8:E7:83:4F"]
+  }
+}]
