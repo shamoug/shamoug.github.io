@@ -1,6 +1,315 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<title>Mandata</title>
-<meta http-equiv="refresh" content="0; url=/mandata/">
-<link rel="canonical" href="https://shamoug.github.io/mandata/">
-<a href="/mandata/">Mandata</a>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aladdin Shamoug</title>
+<meta name="author" content="Aladdin Shamoug">
+<meta name="description" content="Aladdin Shamoug, humanitarian data scientist. Local-first AI tools, decision systems, and games that teach serious things.">
+<link rel="canonical" href="https://shamoug.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F6F8;
+  --ink:#0F1E2B;
+  --cobalt:#2353C4;
+  --slate:#55677A;
+  --hairline:#D3DCE4;
+  --tick:#B9C6D1;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0C1620;
+    --ink:#E6EDF3;
+    --cobalt:#7FA3F2;
+    --slate:#94A6B6;
+    --hairline:#22303E;
+    --tick:#31465A;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Archivo",system-ui,sans-serif;
+  font-variation-settings:"wdth" 100;
+  line-height:1.6;
+  font-size:1.0625rem;
+}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--cobalt);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:2px}
+
+/* Header */
+header{padding:1.5rem 0}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.brand{font-weight:700;font-variation-settings:"wdth" 118;letter-spacing:.01em;color:var(--ink);font-size:1rem}
+nav{display:flex;gap:1.4rem;font-size:.95rem}
+nav a{color:var(--slate)}
+nav a:hover{color:var(--cobalt)}
+
+/* Meridian ruler: the signature device */
+.meridian{
+  position:relative;height:14px;border:0;margin:0;
+  background:
+    repeating-linear-gradient(90deg, var(--tick) 0 1px, transparent 1px 28px) bottom/100% 7px no-repeat,
+    linear-gradient(var(--hairline),var(--hairline)) bottom/100% 1px no-repeat;
+}
+
+/* Hero */
+.hero{padding:4.5rem 0 4rem}
+.hero h1{
+  font-size:clamp(2.9rem, 9vw, 6.4rem);
+  line-height:.98;
+  font-weight:800;
+  font-variation-settings:"wdth" 123;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+}
+.hero .role{
+  margin-top:1.1rem;
+  font-size:clamp(1.15rem, 2.6vw, 1.5rem);
+  color:var(--cobalt);
+  font-weight:600;
+  font-variation-settings:"wdth" 110;
+}
+.hero .intro{margin-top:1.6rem;max-width:44rem;color:var(--slate);font-size:1.125rem}
+.hero .intro strong{color:var(--ink);font-weight:600}
+@media (prefers-reduced-motion: no-preference){
+  .hero > *{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .role{animation-delay:.12s}
+  .hero .intro{animation-delay:.22s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+
+/* Sections */
+section{padding:3.2rem 0 1rem}
+.section-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  margin-bottom:.4rem;
+}
+.section-head h2{
+  font-size:clamp(1.5rem,3.4vw,2.1rem);
+  font-weight:750;
+  font-variation-settings:"wdth" 118;
+  letter-spacing:-.01em;
+}
+.section-head p{color:var(--slate);font-size:.98rem;max-width:26rem;text-align:right}
+
+/* Project rows */
+.project{
+  display:grid;grid-template-columns:minmax(0,17rem) 1fr;gap:1rem 3rem;
+  padding:2.1rem 0;border-bottom:1px solid var(--hairline);
+}
+.project:last-child{border-bottom:0}
+.project h3{
+  font-size:clamp(1.55rem,3.6vw,2.15rem);
+  line-height:1.05;
+  font-weight:800;
+  font-variation-settings:"wdth" 120;
+  letter-spacing:-.012em;
+}
+.project h3 a{color:var(--ink)}
+.project h3 a:hover{color:var(--cobalt);text-decoration:none}
+.project .where{margin-top:.55rem;color:var(--slate);font-size:.92rem;max-width:15rem}
+.project .body p{max-width:40rem}
+.project .links{margin-top:.85rem;display:flex;gap:1.6rem;font-weight:600;font-size:.98rem}
+@media (max-width:720px){
+  .project{grid-template-columns:1fr;gap:.5rem}
+  .project .where{max-width:none;margin-bottom:.4rem}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .section-head p{text-align:left}
+}
+
+/* Footer */
+footer{padding:3.5rem 0 4.5rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
+footer p{color:var(--slate);font-size:.95rem}
+footer nav{gap:1.6rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="brand">Aladdin Shamoug</span>
+    <nav aria-label="Site">
+      <a href="#work">Projects</a>
+      <a href="#research">Research</a>
+      <a href="https://github.com/shamoug">GitHub</a>
+      <a href="https://www.linkedin.com/in/shamoug">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap"><div class="meridian" role="presentation"></div></div>
+
+<main>
+  <section class="hero" aria-label="Introduction">
+    <div class="wrap">
+      <h1>Intelligence, built close to the people it serves.</h1>
+      <p class="role">Aladdin Shamoug. Humanitarian data scientist.</p>
+      <p class="intro">Twenty-two years of international work across twelve countries, a PhD in Information Science, and a current post leading the <strong>data, digital, and innovation practice of a United Nations office</strong>. On this page: the software I build in the open. Local-first AI that respects privacy, decision tools that read the world's news, and games that teach serious things with a light heart.</p>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="applied-h">
+    <div class="wrap">
+      <div class="meridian" role="presentation"></div>
+      <div class="section-head" style="margin-top:1.1rem">
+        <h2 id="applied-h">Applied intelligence</h2>
+        <p>Working software that reasons on your own machine. No cloud, no account, no telemetry.</p>
+      </div>
+
+      <article class="project">
+        <div>
+          <h3><a href="/mandata/">Mandata</a></h3>
+          <p class="where">Windows, macOS, Linux, with an Android companion</p>
+        </div>
+        <div class="body">
+          <p>A desktop companion for Microsoft Outlook that reads your email threads, finds the tasks hiding inside them, and follows each one to closure. It records who asked whom for what and by when, drafts the follow-ups, answers plain-language questions with cited sources, and compiles weekly reports. Every inference runs locally through Ollama, so your mail never leaves your machine.</p>
+          <p class="links"><a href="/mandata/">Visit the site</a> <a href="https://github.com/shamoug/mandata">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="/finad/">Finad</a></h3>
+          <p class="where">Windows desktop, Android alerts</p>
+        </div>
+        <div class="body">
+          <p>A market intelligence engine that reads twenty news feeds, maps every story to the companies and macro themes it touches, and weighs the result against each stock's position in its 52-week range. The output is a disciplined signal: sell strength meeting bad news, buy weakness meeting good news, and the conviction behind each call. Signals are algorithmic and informational, not investment advice.</p>
+          <p class="links"><a href="/finad/">Visit the site</a> <a href="https://github.com/shamoug/finad">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="/medmon/">SDG Media Monitor</a></h3>
+          <p class="where">Live in the browser</p>
+        </div>
+        <div class="body">
+          <p>A live observatory of how the world's press covers the Sustainable Development Goals. Articles are gathered, summarized in several languages, and plotted on an interactive world map, with time windows from a single day to the full archive and filters by goal, region, and theme.</p>
+          <p class="links"><a href="/medmon/">Open the monitor</a> <a href="https://github.com/shamoug/medmon">Source</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="play-h">
+    <div class="wrap">
+      <div class="meridian" role="presentation"></div>
+      <div class="section-head" style="margin-top:1.1rem">
+        <h2 id="play-h">Play with purpose</h2>
+        <p>Games built to train, to heal, and to explain how crisis response actually works.</p>
+      </div>
+
+      <article class="project">
+        <div>
+          <h3><a href="/parlor/">The Parlor</a></h3>
+          <p class="where">Installable web app, works offline</p>
+        </div>
+        <div class="body">
+          <p>Eight evidence-informed word games for speech and language therapy, built for people with aphasia, apraxia, dysarthria, articulation disorders, and stuttering, and for the clinicians and families who support them. Every game ends in spoken practice, every attempt is logged for progress review, and every record stays in the browser. Free and private by design.</p>
+          <p class="links"><a href="/parlor/">Play</a> <a href="https://github.com/shamoug/parlor">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="/comgro/">Common Ground</a></h3>
+          <p class="where">Browser, solo or multiplayer</p>
+        </div>
+        <div class="body">
+          <p>Five games about the same work: a UN Country Team holding a crisis together. A cinematic board race through lucky breaks and field crises, a tower defense, a shared word duel for two officers, a diplomatic chess variant where captured pieces are won over rather than lost, and a Global Goals quiz show that turns phones into private answer pads.</p>
+          <p class="links"><a href="/comgro/">Play</a> <a href="https://github.com/shamoug/comgro">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="/antiga/">Save the Date</a></h3>
+          <p class="where">Browser, online multiplayer</p>
+        </div>
+        <div class="body">
+          <p>A systems-thinking game about acting under uncertainty. Two towns share one river and one approaching flood; every round the forecast sharpens while the power to act drains away. Act early and risk a false alarm, wait for certainty and it is already too late. Built for workshops, it runs itself with no facilitator.</p>
+          <p class="links"><a href="/antiga/">Play</a> <a href="https://github.com/shamoug/antiga">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="/Gbuster/">Ghost Buster GO</a></h3>
+          <p class="where">Phone, installable web app</p>
+        </div>
+        <div class="body">
+          <p>An augmented-reality ghost hunt played on real streets. A live map spawns deterministic ghosts around you, so every player standing in the same place sees the same spirits; the rear camera and a hold-to-fire lightning stream do the rest. Crews, a tuned boss fight, and a Ghostdex of eight original species, with no app store and no server to run.</p>
+          <p class="links"><a href="/Gbuster/">Play</a> <a href="https://github.com/shamoug/Gbuster">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="/gamarc/">Nexus Arcade</a></h3>
+          <p class="where">Browser, desktop and phone</p>
+        </div>
+        <div class="body">
+          <p>Six original games in one offline-first arcade: abstract strategy across two planes of reality, hex-grid territory, rhythm combat with an adaptive tempo, momentum duels, a two-strand puzzle race, and a light-routing puzzle. Pure vanilla JavaScript with no backend, no build step, and no network calls of any kind.</p>
+          <p class="links"><a href="/gamarc/">Play</a> <a href="https://github.com/shamoug/gamarc">Source</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="research" aria-labelledby="research-h">
+    <div class="wrap">
+      <div class="meridian" role="presentation"></div>
+      <div class="section-head" style="margin-top:1.1rem">
+        <h2 id="research-h">Research and tooling</h2>
+        <p>Where the applied work comes from.</p>
+      </div>
+
+      <article class="project">
+        <div>
+          <h3><a href="https://github.com/shamoug/SEmHuS">SEmHuS</a></h3>
+          <p class="where">Published research, Journal of International Humanitarian Action</p>
+        </div>
+        <div class="body">
+          <p>A semantically embedded humanitarian space: doctoral research that applies AI/NLP and word embeddings to humanitarian corpora, so that the language of crisis response can be mapped, measured, and queried. The repository holds the trained model, tokenizer, and analysis notebooks behind the published article.</p>
+          <p class="links"><a href="https://github.com/shamoug/SEmHuS">Source</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3><a href="https://github.com/shamoug/Ollama-Sandbox">Ollama Sandbox</a></h3>
+          <p class="where">Python command line</p>
+        </div>
+        <div class="body">
+          <p>A minimal command-line tool for conversing with local language models through Ollama, preserving conversational context across turns. A small utility, and the seed of the local-first approach that Mandata and Finad grew from.</p>
+          <p class="links"><a href="https://github.com/shamoug/Ollama-Sandbox">Source</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<div class="wrap"><div class="meridian" role="presentation"></div></div>
+
+<footer>
+  <div class="wrap">
+    <p>Aladdin Shamoug. New York.</p>
+    <nav aria-label="Elsewhere">
+      <a href="https://github.com/shamoug">GitHub</a>
+      <a href="https://www.linkedin.com/in/shamoug">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
